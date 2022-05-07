@@ -1,1 +1,3 @@
-
+nodejs创建TCP服务器
+用net模块创建TCP服务器和客户端
+使用telnet连接TCP服务器
