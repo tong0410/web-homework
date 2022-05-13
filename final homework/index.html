@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=animate.min.css><link rel=icon href=favicon.ico><script>// 跳转谷歌
+    // function LaunchApp(url) {
+    //   var myShell = new ActiveXObject("wscript.shell");
+    //   var cmd = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe ' + url;
+    //   myShell.exec(cmd);
+    //   myShell = null;
+    // }
+    // 获取谷歌浏览器版本
+    function getChromeVersion() {
+      var arr = navigator.userAgent.split(' ');
+      var chromeVersion = '';
+      for (var i = 0; i < arr.length; i++) {
+        if (/chrome/i.test(arr[i]))
+          chromeVersion = arr[i]
+      }
+      if (chromeVersion) {
+        return Number(chromeVersion.split('/')[1].split('.')[0]);
+      } else {
+        return false;
+      }
+    }
+    function myfun() {
+      var isIE = /*@cc_on!@*/false;
+      var chromeVersion = getChromeVersion();
+      var version = navigator.userAgent;
+      var isWin7 = version.indexOf("Windows NT 6.1") > -1 || version.indexOf("Windows 7") > -1;
+      var isWinxp = version.indexOf("Windows NT 5.1") > -1 || version.indexOf("Windows XP") > -1;
+      // console.log(version);
+
+      // 获取当前路径,判断是否在专题页
+      // var urlStr = window.location.href;
+      // var isSpecial = urlStr.indexOf('special')
+
+      if (isWinxp) {
+        if (isIE) {
+          window.location = "../chajian/360xp.html";
+        } else {
+          if (chromeVersion) {
+            if (chromeVersion < 47) {
+              window.location = "../chajian/360xp1.html";
+              return false
+            }
+          }
+        }
+      } else if (isWin7) {
+        var agent = version.toLowerCase();
+        if (agent.indexOf("win64") >= 0 || agent.indexOf("wow64") >= 0) {
+          // console.log(agent)
+          if (isIE) {
+            // if (isSpecial > 0) {
+            //   LaunchApp(urlStr)
+            //   window.location = "../chajian/ChromeGreen64.html";
+            //   return
+            // }
+            window.location = "../chajian/Chrome322.html";
+          }
+          if (chromeVersion) {
+            if (chromeVersion < 47) {
+              window.location = "../chajian/Chrome64.html";
+              return false
+            }
+          }
+        } else {
+          if (isIE) {
+            // if (isSpecial > 0) {
+            //   LaunchApp(urlStr)
+            //   window.location = "../chajian/ChromeGreen32.html";
+            //   return
+            // }
+            window.location = "../chajian/Chrome321.html";
+          }
+          if (chromeVersion) {
+            if (chromeVersion < 47) {
+              window.location = "../chajian/Chrome32.html";
+              return false
+            }
+          }
+        }
+      } else {
+        if (isIE) {
+          window.location = "../chajian/Chrome322.html";
+        }
+        if (chromeVersion) {
+          if (chromeVersion < 47) {
+            window.location = "../chajian/Chrome64.html";
+            return false
+          }
+        }
+      }
+    }
+    window.onload = myfun;</script><link href=css/app.5720132a.css rel=preload as=style><link href=css/chunk-vendors.51d81c45.css rel=preload as=style><link href=js/app.634ea0ee.js rel=preload as=script><link href=js/chunk-vendors.441509a7.js rel=preload as=script><link href=css/chunk-vendors.51d81c45.css rel=stylesheet><link href=css/app.5720132a.css rel=stylesheet></head><body><noscript><strong>We're sorry but educateportalpro doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=js/chunk-vendors.441509a7.js></script><script src=js/app.634ea0ee.js></script></body></html>
